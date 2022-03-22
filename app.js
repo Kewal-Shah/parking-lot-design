@@ -23,8 +23,23 @@ parkingLot.parkCar(maruti5);
 parkingLot.parkCar(maruti6);
 
 // Display Parked Cars
-parkingLot.display();
+//parkingLot.display();
 
-parkingLot.getRegistrationNumberOfCarsByColor("Blue");
-parkingLot.getTicketIdByRegistrationNumber("MH14");
-parkingLot.getTicketNumberOfCarsByColor("Yellow");
+// Execution of Query 1
+console.log("Registration Number of all cars of blue color");
+const registrationNumberOfCarsByColor =
+  parkingLot.getRegistrationNumberOfCarsByColor("Blue");
+for (const registrationNumber of registrationNumberOfCarsByColor) {
+  console.log(registrationNumber);
+}
+// Execution of Query 2
+console.log("Ticket id of car with registration number as MH14");
+console.log(parkingLot.getTicketIdByRegistrationNumber("MH14"));
+
+// Execution of Query 3
+console.log("Ticket id of all car with of color yellow");
+const ticketNumberOfCarsByColor =
+  parkingLot.getTicketNumberOfCarsByColor("Yellow");
+for (const ticketNumber of ticketNumberOfCarsByColor) {
+  console.log(ticketNumber);
+}

@@ -9,6 +9,7 @@ class ParkingLot {
 
   parkCar(car) {
     // Check for total cars parked and unique registration numbers
+
     if (this.max_available_slots > 0) {
       if (!this.checkExists(car.registrationNumber)) {
         // Generate a Unique ticket id and assign it to car
@@ -35,11 +36,11 @@ class ParkingLot {
       Store.removeEntries(registrationNumber);
       this.max_available_slots = this.max_available_slots - 1;
       console.log(
-        `Car with registration number ${car.registrationNumber} is out of parking`
+        `Car with registration number ${registrationNumber} is out of parking`
       );
     } else {
       console.log(
-        `Car with registration number ${car.registrationNumber} does not exist`
+        `Car with registration number ${registrationNumber} does not exist`
       );
     }
   }
@@ -56,10 +57,10 @@ class ParkingLot {
     const cars = [];
     for (const car of entries) {
       if (car.color === color) {
-        cars.push(car);
+        cars.push(car.registrationNumber);
       }
     }
-    cars.forEach((car) => console.log(car.registrationNumber));
+    return cars;
   }
 
   getTicketIdByRegistrationNumber(registrationNumber) {
@@ -71,7 +72,7 @@ class ParkingLot {
         break;
       }
     }
-    console.log(ticketId);
+    return ticketId;
   }
 
   getTicketNumberOfCarsByColor(color) {
@@ -79,10 +80,10 @@ class ParkingLot {
     const cars = [];
     for (const car of entries) {
       if (car.color === color) {
-        cars.push(car);
+        cars.push(car.ticketNumber);
       }
     }
-    cars.forEach((car) => console.log(car.ticketNumber));
+    return cars;
   }
 
   checkExists(registrationNumber) {
