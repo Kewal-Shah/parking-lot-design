@@ -1,0 +1,12 @@
+1. create parking lot with available slots (create an array)
+2. add methods of park, remove and other required queries in the parking lot class
+3. Before adding cars or specifying a slot check for validations before parking
+4. Validation to be performed before parking a car
+	a) Check for availability in parking lot
+	b) Check for existence of the same registration number in the parking lot
+5. 	Validation to be performed before removing a car
+	a) Check for presence of the car using registration number in the parking lot
+6. Run the required queries in app.js and print the expected results.
+
+
+
